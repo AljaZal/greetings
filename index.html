@@ -12,37 +12,44 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background: linear-gradient(135deg, #fceae8, #e3f8f5, #fffdf3);
       font-family: 'Segoe UI', sans-serif;
       text-align: center;
       position: relative;
+      background: url('PUT-YOUR-IMAGE-URL-HERE') no-repeat center center/cover;
+    }
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background-color: rgba(255, 255, 255, 0.65);
+      z-index: 1;
     }
 
     .container {
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.75);
+      padding: 40px 60px;
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
       animation: fadeInUp 2s ease-in-out forwards;
       opacity: 0;
       transform: translateY(20px);
-      background: rgba(255, 255, 255, 0.6);
-      padding: 40px 60px;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      z-index: 10;
     }
 
     h1 {
       font-size: 2.5rem;
-      color: #d981a3;
+      color: #cc8eac; /* pastel roza */
       margin-bottom: 10px;
     }
 
     span {
-      color: #88c9c0;
+      color: #6db49e; /* mint zelena */
       font-weight: bold;
       display: block;
       margin-top: 10px;
     }
 
-    .dog-emoji {
+    .heart-emoji {
       font-size: 4rem;
       margin-top: 20px;
       animation: bounce 2s infinite;
@@ -58,17 +65,17 @@
       50% { transform: translateY(-10px); }
     }
 
-    /* Paw background */
+    /* Paw animation */
     .paw {
       position: absolute;
       font-size: 2rem;
-      opacity: 0.2;
+      opacity: 0.15;
       animation: floatUp 10s linear infinite;
-      color: #b8e994;
+      z-index: 0;
     }
 
-    .paw:nth-child(odd) { color: #f8c4d6; }
-    .paw:nth-child(even) { color: #c8f4e0; }
+    .paw:nth-child(odd) { color: #c9ccd5; } /* srebrno siva */
+    .paw:nth-child(even) { color: #d4a1b7; } /* pastel roza */
 
     @keyframes floatUp {
       0% {
@@ -84,17 +91,20 @@
 </head>
 <body>
 
-  <!-- Paw prints -->
+  <!-- Background overlay -->
+  <div class="overlay"></div>
+
+  <!-- Floating paw prints -->
   <div class="paw" style="left: 10%; animation-delay: 0s;">🐾</div>
   <div class="paw" style="left: 30%; animation-delay: 3s;">🐾</div>
   <div class="paw" style="left: 50%; animation-delay: 6s;">🐾</div>
   <div class="paw" style="left: 70%; animation-delay: 1s;">🐾</div>
   <div class="paw" style="left: 90%; animation-delay: 4s;">🐾</div>
 
-  <!-- Main text box -->
+  <!-- Main content -->
   <div class="container">
     <h1>Wishing you a sunny weekend</h1>
-    <span> Geetings from Klagenfurt</span>
+    <span>Greetings from Klagenfurt</span>
     <div class="heart-emoji">🐶</div>
   </div>
 
